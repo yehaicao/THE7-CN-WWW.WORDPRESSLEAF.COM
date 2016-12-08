@@ -1,0 +1,128 @@
+.vc_logo {
+	display: none !important;
+}
+
+.dt_image {
+	max-height: 100px;
+	max-width: 90%;
+	width: auto;
+	margin: 10px 0;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.dt_posttype_post,
+.dt_taxonomy_terms {
+	overflow: hidden;
+}
+	.dt_posttype_post label,
+	.dt_taxonomy_terms label {
+		display: block;
+		float: left;
+		width: 23%;
+		margin: 0 2% 10px 0;
+	}
+		.dt_posttype_post input[type="checkbox"],
+		.dt_taxonomy_terms input[type="checkbox"] {
+			margin: 0 5px 0 0 !important;
+		}
+
+/*
+[class*="dt_vc_ico"].vc_element-icon {
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+[class*="dt_vc_sc"].wpb_content_element > .wpb_element_wrapper {
+	height: auto;
+	background-position:  21px center;
+	background-repeat: no-repeat;
+}
+	[class*="dt_vc_sc"].wpb_content_element .wpb_vc_param_value.content ul {
+		margin-left: 15px;
+		list-style: disc;
+	}
+	[class*="dt_vc_sc"].wpb_content_element .vc_admin_label {
+		display: block;
+		clear: both;
+	}
+*/
+.vc_element-icon.dt_vc_ico_quote {
+	background-image: url("../includes/quote/quotes.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_call_to_action {
+	background-image: url("../includes/call-to-action/call-to-action.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_teaser {
+	background-image: url("../includes/shortcode-teasers/sc-teaser.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_banner {
+	background-image: url("../includes/banner/banner.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_contact_form {
+	background-image: url("../includes/contact-form/contact-form.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_map {
+	background-image: url("../includes/map/map.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_blog_posts_small {
+	background-image: url("../includes/blog-posts-small/blog-posts-small.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_blog_posts {
+	background-image: url("../includes/blog-posts/blog-posts.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_portfolio_slider,
+.vc_element-icon.dt_vc_ico_portfolio {
+	background-image: url("../includes/portfolio-slider/portfolio.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_small_photos {
+	background-image: url("../includes/small-photos/photos-slideshow.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_slideshow {
+	background-image: url("../includes/slideshow/slider.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_logos {
+	background-image: url("../includes/logos/clients-logos.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_team {
+	background-image: url("../includes/team/team.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_testimonials {
+	background-image: url("../includes/testimonials/testimonials.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_gap {
+	background-image: url("../includes/gap/gap.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_divider {
+	background-image: url("../includes/divider/divider.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_fancy_image {
+	background-image: url("../includes/fancy-image/fancy-img.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_button {
+	background-image: url("../includes/button/buttons.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_list {
+	background-image: url("../includes/list/list.png") !important;
+}
+
+.vc_element-icon.dt_vc_ico_benefits {
+	background-image: url("../includes/benefits/benefits.png") !important;
+}

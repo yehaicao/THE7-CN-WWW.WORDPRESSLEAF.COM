@@ -1,0 +1,68 @@
+/*!
+ * Visual Composer v4.3.4 (http://vc.wpbakery.com)
+ * Copyright 2011-2014 Michael M - WPBakery.com
+ */
+
+@import "lib/editor.less";
+@import "../lib/bootstrap3/less/component-animations.less";
+// Navbar
+@import "modules/vc_navbar.less";
+.vc_navbar {
+    .navbar-fixed-top();
+}
+@import "lib/elements_icons.less";
+// Add element box
+@import "popups/modal_add_element.less";
+// Edit form for shortcode
+@import "popups/panel_edit_form.less";
+// Templates
+@import "popups/panel_templates.less";
+// Post settings
+@import "popups/panel_post_settings.less";
+// Vc Button
+@import (reference) "backend_shortcodes/vc_button.less";
+// Edit row layout
+@import "popups/panel_edit_layout.less";
+
+.vc_editor {
+    // Fix admin page
+    #adminmenuback {
+        display: none;
+    }
+    #wpbody {
+        padding-top: 10px;
+    }
+    #wpcontent, #wpfooter {
+        margin-left: 0 !important;
+    }
+    #wpcontent {
+        padding-left: 0 !important;
+    }
+    #adminmenuback, #adminmenuwrap {
+        display: none;
+    }
+    #wpbody-content {
+        padding-bottom: 0;
+    }
+    #wpfooter,
+    #local-storage-notice,
+    #setting-error-tgmpa {
+        display: none !important;
+    }
+    // Frame settings
+    #vc_inline-frame-wrapper {
+        position: absolute;
+        width: 100%;
+    }
+    #vc_inline-frame {
+        margin: 0 auto;
+        display: block;
+    }
+    #wpb_csseditor { border: 1px solid #BABABA; }
+}
+// Vendors
+@import "vendor/contact_form_7.less";
+@import "vendor/gravity_form.less";
+@import "vendor/layerslider.less";
+@import "vendor/rev_slider.less";
+

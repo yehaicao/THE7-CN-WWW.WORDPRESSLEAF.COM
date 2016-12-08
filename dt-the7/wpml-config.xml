@@ -1,0 +1,18 @@
+<wpml-config>
+    <admin-texts>
+        <key name="the7">
+            <key name="header-contentarea" />
+            <key name="general-rel_posts_head_title" />
+            <key name="general-rel_projects_head_title" />
+            <key name="top_bar-contact_address" />
+            <key name="top_bar-contact_phone" />
+            <key name="top_bar-contact_email" />
+            <key name="top_bar-contact_skype" />
+            <key name="top_bar-contact_clock" />
+            <key name="top_bar-contact_info" />
+            <key name="top_bar-contact_text" />
+            <key name="bottom_bar-copyrights" />
+            <key name="bottom_bar-text" />
+        </key>
+    </admin-texts>
+</wpml-config>

@@ -1,0 +1,257 @@
+@import "responsive-utilities.less";
+@import "grid.less";
+@import "utils.less";
+@import "../modules/vc_table.less";
+//Helper classes
+.vc_txt_align_ {
+    &left {
+        text-align: left;
+    }
+    &right {
+        text-align: right;
+    }
+    &center {
+        text-align: center;
+    }
+    &justify {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+}
+
+&.vc_el_width_ {
+&50 {
+//width 50
+    width: 50%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+&60 {
+//width 60
+    width: 60%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+&70 {
+//width 70
+    width: 70%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+&80 {
+//width 80
+    width: 80%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+&90 {
+//width 90
+    width: 90%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+&100 {
+    width: 100%;
+}
+    }
+@import (once) "../modules/vc_buttons.less";
+.vc_column_container {
+  .vc_btn, .wpb_button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+/* 2. Alerts (Message boxes)
+---------------------------------------------------------- */
+@import "../shortcodes/vc_message.less";
+
+
+/* 4. Separators
+---------------------------------------------------------- */
+
+
+/* 5. Single image
+---------------------------------------------------------- */
+img {
+    height: auto;
+}
+.wpb_single_image {
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+    &.vc_align_center {
+        text-align: center;
+    }
+    &.vc_align_right {
+        text-align: right;
+    }
+    &.vc_align_left {
+        text-align: left;
+    }
+}
+div .vc_box_ {
+    &rounded {
+        border-radius: 4px;
+        .box-shadow(none);
+    }
+    &outline,
+    &outline_circle {
+        border-radius: 0px;
+        .box-shadow(none);
+        padding: 6px;
+        border: 1px solid @grey;
+    }
+    &border,
+    &border_circle {
+        border-radius: 0px;
+        .box-shadow(none);
+        padding: 6px;
+        border: none;
+    }
+    &shadow,
+    &shadow_border,
+    &shadow_border_circle,
+    &shadow_circle, {
+        border-radius: 0px;
+        .box-shadow(0 0px 5px rgba(0, 0, 0, 0.1));
+    }
+    &shadow_border,
+    &shadow_border_circle {
+        padding: 6px;
+    }
+    &shadow_3d {
+        border-radius: 0px;
+        .box-shadow(none);
+        margin-bottom: 15px;
+    }
+//
+    &circle,
+    &outline_circle,
+    &border_circle,
+    &shadow_circle,
+    &shadow_border_circle {
+        border-radius: 5000px;
+        border-radius: 50%;
+        .box-shadow(none);
+        overflow: hidden;
+    }
+    &shadow_circle, &shadow_border_circle {
+        .box-shadow(0 0px 5px rgba(0, 0, 0, 0.1));
+    }
+}
+.vc_box_shadow_3d_wrap {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    max-width: 100%;
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+        left: 10px;
+        bottom: 8%;//20px;
+        width: 40%;
+        height: 20%;
+        max-height: 100px;
+        max-width: 300px;
+        z-index: -1;
+        .rotate(-6deg);
+    }
+    &:after {
+        left: auto;
+        right: 10px;
+        .rotate(6deg);
+    }
+}
+.vc_box_border_variants(@selector, @color) {
+    .vc_box_outline.vc_box_border@{selector},
+.vc_box_outline_circle.vc_box_border@{selector} {
+    border-color: @color;
+}
+.vc_box_border.vc_box_border@{selector},
+.vc_box_border_circle.vc_box_border@{selector} {
+    background-color: @color;
+}
+    }
+.vc_box_border_variants(_blue, @blue);
+.vc_box_border_variants(_turquoise, @turquoise);
+.vc_box_border_variants(_pink, @pink);
+.vc_box_border_variants(_violet, @violet);
+.vc_box_border_variants(_peacoc, @peacoc);
+.vc_box_border_variants(_chino, @chino);
+.vc_box_border_variants(_mulled_wine, @mulled_wine);
+.vc_box_border_variants(_vista_blue, @vista_blue);
+.vc_box_border_variants(_black, @black);
+.vc_box_border_variants(_grey, @grey);
+.vc_box_border_variants(_orange, @orange);
+.vc_box_border_variants(_sky, @sky);
+.vc_box_border_variants(_green, @green);
+.vc_box_border_variants(_juicy_pink, @juicy_pink);
+.vc_box_border_variants(_sandy_brown, @sandy_brown);
+.vc_box_border_variants(_purple, @purple);
+.vc_box_border_variants(_white, @white);
+
+/***************** OLD CSS *****************/
+/* Content elements margins
+---------------------------------------------------------- */
+.wpb_alert p:last-child,
+#content .wpb_alert p:last-child, /* for twenty ten theme */
+.wpb_text_column p:last-child,
+.wpb_text_column *:last-child,
+
+#content .wpb_text_column p:last-child, /* for twenty ten theme */
+#content .wpb_text_column *:last-child, /* for twenty ten theme */
+
+.wpb_toggle_content p:last-child {
+    margin-bottom: 0;
+}
+.wpb_row,
+.wpb_content_element,
+ul.wpb_thumbnails-fluid > li,
+.last_toggle_el_margin,
+.wpb_button {
+    margin-bottom: @vc_element_margin_bottom;
+}
+
+//.wpb_alert,
+.fb_like,
+.twitter-share-button, .entry-content .twitter-share-button,
+.wpb_googleplus,
+.wpb_pinterest,
+.wpb_tab .wpb_content_element,
+.wpb_accordion .wpb_content_element,
+.wpb_toggle_content {
+    margin-bottom: @vc_margin_bottom_gold;//@vc_element_margin_bottom/1.61; //1.61 - is golden ratio
+}
+
+.wpb_column {
+    > .wpb_wrapper > *:last-child {
+        margin-bottom: 0; //remove margin bottom from last content elements in columns
+    }
+}
+
+// @import "utils/_vc_mixins.less";
+// @import "_variables.less";
+// @import "utils/_variables_common.less";
+
+@import "../shortcodes/vc_social_btns.less";
+@import "../shortcodes/vc_toggle_faq.less";
+@import "../shortcodes/vc_widgetised_column.less";
+@import "../shortcodes/vc_button.less";
+@import "../shortcodes/vc_call_to_action.less";
+@import "../shortcodes/vc_google_maps.less";
+@import "../shortcodes/vc_tabs_tour_accordion.less";
+@import "../shortcodes/vc_teaser_grid.less";
+@import "../shortcodes/vc_image_gallery.less";
+//@import "shortcodes/vc_alert.less";
+@import "../shortcodes/vc_flickr.less";
+@import "../shortcodes/vc_video_widget.less";
+@import "../shortcodes/vc_post_slider.less";
+@import "../shortcodes/vc_progress_bar.less";
+@import "../shortcodes/vc_pie.less";
+@import "../shortcodes/vc_carousel.less";
+@import "../shortcodes/vc_separator.less";
+
+@import "css3_animations.less";

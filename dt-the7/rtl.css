@@ -1,0 +1,133 @@
+/*
+Theme Name: The7
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+#header .mini-search .field {
+right: -280px;
+padding: 0 13px 0 0;
+}
+.stripe, .page-title {
+	margin-right: -1000px;
+	overflow: hidden;
+	padding: 20px 1000px;
+	width: 100%;
+}
+
+.details, .link.btn-link, .btn-zoom, .project-zoom {
+	display: inline-block;
+	padding-left: 15px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-decoration: none;
+}
+
+.details {
+/*background-image: url('arrow-pointing-to-left');*/
+}
+.logo-left #navigation {
+	text-align: left;
+}
+.standard-arrow li {
+	padding-right: 24px;
+	padding-left: 0px;
+	background-position: center right;
+}
+.list-divider li:first-child {
+	background-position: right 6px;
+}
+.standard-arrow li, .breadcrumbs li, .custom-menu a {
+/*background-image: url('bullet-pointing-to-left');*/
+}
+.testimonial-vcard .alignleft {
+	margin: 5px 0px 5px 20px;
+}
+
+#main-nav > li.has-children > a:after {
+	content: none;
+}
+
+#main-nav.menu-frame-on > li.has-children.level-arrows-on > a {
+	padding: 6px 11px 7px 19px;
+}
+#main-nav > li.has-children > a:before {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left:6px;
+	margin-top: -2px;
+	width: 9px;
+	height: 6px;
+	content: "";
+}
+#main-nav > li.has-children.level-arrows-on > a:before {
+	background-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%20width=%229px%22%20height=%226px%22%20viewBox=%220%200%209%206%22%20enable-background=%22new%200%200%209%206%22%20xml:space=%22preserve%22%3E%3Cpolygon%20fill=%22%23474950%22%20points=%228.205,1.669%204.515,5.516%200.824,1.703%201.846,0.669%204.515,3.344%207.189,0.669%20%22/%3E%3C/svg%3E");
+}
+
+#phantom .ph-wrap.with-logo #main-nav {
+text-align: left;
+}
+.sub-nav li.has-children:after {
+	content: none;
+}
+.sub-nav .sub-nav {
+right: 241px;
+}
+.sub-nav li a {
+	padding: 7px 10px 7px 30px;
+	text-align: right;
+}
+.sub-nav li.has-children.level-arrows-on:before, #top-bar .sub-nav li.has-children:before, #bottom-bar .sub-nav li.has-children:before, .dl-menuwrapper li.has-children > a:before {
+background-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%20width=%226px%22%20height=%229px%22%20viewBox=%220%200%206%209%22%20enable-background=%22new%200%200%206%209%22%20xml:space=%22preserve%22%3E%3Cpolygon%20fill=%22%23373a41%22%20points=%221.557,0.766%205.24,4.534%201.712,8.256%200.557,7.219%203.295,4.474%200.557,1.797%20%22/%3E%3C/svg%3E");
+}
+.sub-nav li.has-children:before {
+	display: block;
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	margin-top: -4.5px;
+	content: "";
+	width: 6px;
+	height: 9px;
+	background-position: right center;
+}
+
+.comment-form-author input, .form-name input, .comment-form-email input, .form-mail input, .comment-form-url input, .form-website input, .form-country input, .form-telephone input, .form-city input, .form-company input {
+padding-left: 20px;
+background-position: 3% center;
+background-repeat: no-repeat;
+}
+.clear-form {
+float: left;
+padding: 0 0 0 18px;
+}
+.clear-form:before {
+content: none;
+}
+.clear-form:after {
+display: block;
+position: absolute;
+top: 50%;
+left: 0;
+margin-top: -6.5px;
+width: 13px;
+height: 13px;
+line-height: 13px;
+content: "";
+}
+.clear-form:after {
+background-image: url("data:image/svg+xml,%3Csvg%20version=%221.1%22%20xmlns=%22http://www.w3.org/2000/svg%22%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%20x=%220px%22%20y=%220px%22%20width=%2213px%22%20height=%2213px%22%20viewBox=%220%200%2013%2013%22%20enable-background=%22new%200%200%2013%2013%22%20xml:space=%22preserve%22%3E%3Cpath%20fill=%22%233b8ced%22%20d=%22M6.501,1.084c1.448,0,2.812,0.565,3.836,1.593c1.019,1.022,1.581,2.38,1.581,3.823%09c0,1.445-0.561,2.801-1.581,3.823c-1.022,1.026-2.388,1.595-3.836,1.595c-1.45,0-2.812-0.566-3.836-1.595C1.646,9.301,1.084,7.945,1.084,6.5c0-1.442,0.561-2.801,1.58-3.823C3.688,1.649,5.051,1.084,6.501,1.084%20M6.501,0%09C2.91,0,0,2.911,0,6.5C0,10.091,2.91,13,6.501,13C10.09,13,13,10.091,13,6.5C13,2.911,10.09,0,6.501,0L6.501,0z%22/%3E%3Cpolygon%20fill=%22%233b8ced%22%20points=%223.534,8.557%204.429,9.45%209.467,4.412%208.604,3.55%20%22/%3E%3Cpolygon%20fill=%22%233b8ced%22%20points=%229.467,8.557%208.57,9.45%203.534,4.412%204.396,3.55%20%22/%3E%20%3C/svg%3E");
+}
+

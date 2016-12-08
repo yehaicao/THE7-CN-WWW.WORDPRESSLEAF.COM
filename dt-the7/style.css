@@ -1,0 +1,24 @@
+/*
+Theme Name: The7
+Theme URI: http://dream-theme.com/
+Author: Dream-Theme
+Author URI: http://dream-theme.com/
+Description: shared on weidea.net, The7 is perfectly scalable, performance and SEO optimized, responsive, retina ready multipurpose WordPress theme. It will fit every site – big or small. From huge corporate portals to studio or personal sites – The7 will become a great foundation for your next project!
+Version: 4.4.4
+License: This WordPress theme is comprised of two parts: (1) The PHP code and integrated HTML are licensed under the GPL license as is WordPress itself.  You will find a copy of the license text in the same directory as this text file. Or you can read it here: http://wordpress.org/about/gpl/ (2) All other parts of the theme including, but not limited to the CSS code, images, and design are licensed according to the license purchased. Read about licensing details here: http://themeforest.net/licenses/regular_extended
+License URI: License.txt
+Tags: one-column, two-columns, right-sidebar, flexible-width, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
+*/
+
+.blog .dt-format-gallery .dt-format-gallery-coll.full,
+.archive .dt-format-gallery .dt-format-gallery-coll.full,
+.search .dt-format-gallery .dt-format-gallery-coll.full
+{
+	display: none;
+}
+
+
+.wp-caption-text,
+.sticky,
+.gallery-caption,
+.bypostauthor {}

@@ -1,0 +1,2 @@
+These are full plugin packages. Unzip them and locate installable files inside.
+You can use plugins from this folder ONLY to update them WITHIN The7 WordPress theme. Otherwise please purchase appropriate licenses.

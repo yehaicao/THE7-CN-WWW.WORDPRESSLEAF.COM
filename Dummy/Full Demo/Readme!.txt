@@ -1,0 +1,1 @@
+Important! Images on demo (except images in Compact Dummy, Landing page, Layer and Revolution Sliders) are copyrighted and you cannot use them without purchasing proper licenses. We do not distribute them in theme package. You must refuse importing media files during content installation. We are not responsible for any possible copyright infringement.

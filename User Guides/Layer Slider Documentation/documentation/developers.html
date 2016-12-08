@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Developer documentation for LayerSlider WP</title>
+	<link rel="stylesheet" href="assets/css/doc.css">
+	<link rel="stylesheet" href="assets/css/font.css">
+	<link rel="stylesheet" href="assets/js/syntaxhighlighter/styles/shCoreKreatura.css">
+	<link rel="stylesheet" href="assets/js/syntaxhighlighter/styles/shThemeKreatura.css">
+	<link href="http://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+		<script src="assets/js/html5.js"></script>
+	<![endif]-->
+</head>
+<body class="devdocs">
+	<div id="wrapper">
+
+		<header>
+			<h1>
+				LayerSlider WP <span>for developers</span>
+			</h1>
+			<h2>
+				Responsive WordPress Slider Plugin
+				<p>
+					Version: 5.0.0 | Released: 22th December 2013
+				</p>
+			</h2>
+			<div class="clear"></div>
+		</header>
+
+		<div class="km-box">
+			<div class="header">
+				<h3>Table of Contents</h3>
+				<h3>Current Chapter: <span class="light">Overview</span></h3>
+			</div>
+			<div class="inner">
+				<ul id="sidebar">
+					<li data-deeplink="overview" class="active">
+						<span>Overview</span>
+					</li>
+					<li data-deeplink="licensing">
+						<span>Licensing terms</span>
+					</li>
+					<li data-deeplink="bundling">
+						<span>Bundling in themes</span>
+					</li>
+					<li data-deeplink="legacy-apis">
+						<span>Legacy APIs</span>
+					</li>
+					<li data-deeplink="sliders-class">
+						<span>Working with sliders</span>
+					</li>
+					<li data-deeplink="sources-class">
+						<span>Working with sources</span>
+					</li>
+					<li data-deeplink="action-hooks">
+						<span>Action hooks</span>
+					</li>
+					<li data-deeplink="filter-hooks">
+						<span>Filter hooks</span>
+					</li>
+					<li data-deeplink="release-log">
+						<span>Release log</span>
+					</li>
+				</ul>
+
+				<div id="content">
+
+					<!-- Overview -->
+					<section class="active">
+
+						<h4>It's for developers</h4>
+						<p>This documentation is made explicitly for developers to make their lives easier by describing how the plugin internals are working. If you are not a programmer, please read the <a href="documentation.html">Documentation for End-Users</a>, you don't need to follow any of the instructions here. </p>
+
+						<h4>Overview</h4>
+						<p>This documentation covers the things you need to know about incorporating LayerSlider WP in a larger work such as a WordPress theme. It contains guides for bundling the plugin within your work, and it explains several ways to modify/extent the features and capabilities of the plugin.</p>
+					</section>
+
+
+					<!-- Licensing -->
+					<section>
+						<h4>Licensing terms</h4>
+						<ol class="nomargin">
+							<li>You need to purchase an extended license of the plugin per themes which including the Item.</li>
+							<li>You cannot redistribute the item "as-is", even if you modify it or you make a derivative version for another platform.</li>
+						</ol>
+						<p>Please read the full licenses online on the following links:</p>
+						<ul class="nomargin">
+							<li><a href="http://codecanyon.net/licenses/faq" target="_blank">Licensing FAQs</a></li>
+							<li><a href="http://codecanyon.net/licenses/extended" target="_blank">Extended license</a></li>
+						</ul>
+
+						<h4>Usage terms</h4>
+						<p>Since the current licenses do not deal with re-selling Items, Envato lets authors to decide whether they grant permission for bundling Items or not. We have the following conditions, and you need to follow them:</p>
+						<ol>
+							<li>
+								<strong>You cannot offer the plugin as a stand-alone item</strong>
+								<p>You can't include the plugin separately from your theme in the download package, you have to use the TGM Plugin Activation class. See the "Bundling" section for more information.</p>
+							</li>
+							<li>
+								<strong>You cannot provide an Item Purchase Code for your customers</strong>
+								<p>Since Envato doesn't have a "multi-use" or transferable license, your customers are not entitled to receive an Item Purchase Code with your theme and use the plugin separately from your work.</p>
+							</li>
+							<li>
+								<strong>Updating the plugin is your own responsibility</strong>
+								<p>Since your customers can't receive updates from us, you need to handle this on your own. The TGM Plugin Activation class makes it simple, and we are providing the necessary tools to make it quick as well.</p>
+							</li>
+							<li>
+								<strong>You need to handle LayerSlider related support requests after your customers</strong>
+								<p>We would like to hear your thoughts and suggestions to fix issues and improve our items based on your feedback, but we cannot provide free support for your customers, this is your own responsibility.</p>
+							</li>
+							<li>
+								<strong>Use our preferred settings for TGM plugin installation</strong>
+								<p>With the above mentioned licensing terms you need to configure the plugin in TGM to automatically activate &amp; deactivate it whenever your users are switching themes.</p>
+							</li>
+						</ol>
+					</section>
+
+					<!-- Bundling in themes -->
+					<section>
+						<h4>Introduction</h4>
+						<p>As of 9th September 2013, Envato requires authors to load bundled WordPress plugins in themes with the TGM Plugin Activation class. This helps authors to include 3rd party components easily and handle their dependencies and updates automatically.</p>
+						<h4>Setting up TGM Plugin Activation class</h4>
+						<p>
+							Download the latest version of TGM Plugin Activation class from <a href="http://tgmpluginactivation.com/" target="_blank">their website</a>. Follow their guides and examples to incorporate it into your theme properly.</p>
+						<h4>Example TGM plugin configuration</h4>
+						<p>Below you can see an example configuration for LayerSlider. Remember, we are requiring you to set the force_deactivation option to true in accord our licensing and usage terms.</p>
+						<pre name="code" class="brush: php; highlight:10">
+// LayerSlider config
+
+array(
+	'name' => 'LayerSlider WP',
+	'slug' => 'LayerSlider',
+	'source' => get_stylesheet_directory() . '/plugins/layerslider.zip',
+	'required' => false,
+	'version' => '4.6.5',
+	'force_activation' => true,
+	'force_deactivation' => true
+)
+</pre>
+					<h4>Disabling the auto-update feature</h4>
+					<p>You should disable the auto-update features since it  requires a valid Item Purchase Code that you can't provide to your customers. To do that, you can use the <code>layerslider_ready</code> action hook to override the corresponding global variable as it can be seen in the below example.</p>
+					<pre name="code" class="brush: php;">&lt;?php
+
+    // Register your custom function to override some LayerSlider data
+    add_action('layerslider_ready', 'my_layerslider_overrides');
+    function my_layerslider_overrides() {
+
+        // Disable auto-updates
+        $GLOBALS['lsAutoUpdateBox'] = false;
+    }
+?&gt;</pre>
+					</section>
+
+					<!-- Legacy APIs -->
+					<section>
+						<h4>Database functions to work with sliders</h4>
+						<ul>
+							<li>
+								<code><i>(mixed)</i> lsSliderById( int $ID )</code>
+								<p>Get a slider by its database ID. Returns an associative array with the slider details (see below) on success, or false on failure.
+								</p>
+							</li>
+							<li>
+								<code><i>(array)</i> lsSliders([mixed $limit = 50 [, bool $desc = true [, bool $withData = false ]]] )</code>
+								<p>
+									Returns the most recent sliders on success, or an empty array otherwise. Every parameter are optional. This function does not return the $data object for sliders by default, you need to set the third parameter to "true" for that.
+								</p>
+							</li>
+						</ul>
+						<h4>Returning slider data</h4>
+						<p>
+							The records returned by the above functions are associative arrays with the following contents:
+						</p>
+						<div class="table">
+							<table >
+								<thead>
+									<tr>
+										<th>Type</th>
+										<th>Key</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>int</td>
+										<td>$id</td>
+										<td>The database ID of sliders.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$name</td>
+										<td>The user defined name of sliders (if any).</td>
+									</tr>
+									<tr>
+										<td>array</td>
+										<td>$data</td>
+										<td>The slider data object containing all of its settings.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>$date_c</td>
+										<td>UNIX timestamp for date of creation.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>$date_m</td>
+										<td>UNIX timestamp for date of last modification.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					<!-- Working with sliders -->
+					<section>
+
+						<div class="km-notification warning cf">
+							<span class="icon-attention"></span>
+							This API is a working draft. Minor changes will likely happen in future versions.
+						</div>
+
+						<h4>Introducing the LS_Sliders class</h4>
+						<p>We have a new static class that you can use comfortably to work with sliders. Our older functions for this purpose are still available, but we might remove them in future versions, and we highly recommend you to use the new solution.</p>
+						<h4>Class methods</h4>
+
+						<ul class="sep">
+							<li>
+								<i>(mixed)</i> <code>LS_Sliders::find( [int $ID | array $filters] )</code>
+								<p>Finds sliders with the provided filters and settings. See the corresponding article below on this page.</p>
+								<ul>
+									<li><strong>$ID</strong> (integer) The slider ID you want to find.</li>
+									<li><strong>$filters</strong> (array) Perform an advanced search with the provided filters.</li>
+								</ul>
+							</li>
+							<li>
+								<i>(int)</i> <code>LS_Sliders::count( void )</code>
+								<p>Returns the total number of found sliders from the latest query with ignoring pagination settings.</p>
+							</li>
+							<li>
+								<i>(int)</i> <code>LS_Sliders::add( [string $title = 'Unnamed', [ array $data = array()]] )</code>
+								<p>Adds a new slider with the provided settings. All parameters are optional. The plugin will use the default settings if you provide partial/empty slider data.</p>
+							</li>
+							<li>
+								<i>(bool)</i> <code>LS_Sliders::remove( int $ID )</code>
+								<p>Removes a slider by its database ID. Returns a boolean value to indicate success or failure. This method preserves the actual data in DB to restore it later.</p>
+							</li>
+							<li>
+								<i>(bool)</i> <code>LS_Sliders::delete( int $ID )</code>
+								<p>Permanently deletes a slider by its database ID. Returns a boolean value to indicate success or failure.</p>
+							</li>
+							<li>
+								<i>(bool)</i> <code>LS_Sliders::restore( int $ID )</code>
+								<p>Restores a previously removed slider by its database ID. Returns a boolean value to indicate success or failure.</p>
+							</li>
+						</ul>
+
+						<h4>LS_Sliders filter object</h4>
+						<div class="table">
+							<table >
+								<thead>
+									<tr>
+										<th>Type</th>
+										<th>Key</th>
+										<th>Default</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>string</td>
+										<td>columns</td>
+										<td>'*'</td>
+										<td>Database columns expected to be returned.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>where</td>
+										<td>'' (empty string)</td>
+										<td>Standard MySQL WHERE statement</td>
+									</tr>
+									<tr>
+										<td>array</td>
+										<td>exclude</td>
+										<td>array('hidden', 'removed')</td>
+										<td>Rows excepted to be exluded from search results.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>orderby</td>
+										<td>'date_c'</td>
+										<td>The order result by a column.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>order</td>
+										<td>'DESC'</td>
+										<td>The order of returned data.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>limit</td>
+										<td>10</td>
+										<td>Limit the number of returned sliders.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>page</td>
+										<td>1</td>
+										<td>Get results for a specific page when using pagination.</td>
+									</tr>
+									<tr>
+										<td>bool</td>
+										<td>data</td>
+										<td>true</td>
+										<td>Returns the data object of sliders.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h4>Examples</h4>
+						<p>Find a slider by its database ID.</p>
+						<pre name="code" class="brush: php;">$sliders = LS_Sliders::find(2);</pre>
+						<p>Finds sliders with custom filters and return results with modifiers.</p>
+						<pre name="code" class="brush: php;">$sliders = LS_Sliders::find(array(
+	'orderby' => 'date_m',
+	'limit' => 30,
+	'data' => false
+));</pre>
+
+						<h4>Returning slider objects</h4>
+						<div class="table">
+							<table >
+								<thead>
+									<tr>
+										<th>Type</th>
+										<th>Key</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>int</td>
+										<td>$id</td>
+										<td>The database ID of sliders.</td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$name</td>
+										<td>The user defined name of sliders (if any).</td>
+									</tr>
+									<tr>
+										<td>array</td>
+										<td>$data</td>
+										<td>The slider data object containing all of its settings</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>$date_c</td>
+										<td>UNIX timestamp for date of creation.</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>$date_m</td>
+										<td>UNIX timestamp for date of last modification.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					<!-- Working with sources -->
+					<section>
+						<div class="km-notification warning cf">
+							<span class="icon-attention"></span>
+							This API is not yet available. It will likely be introduced in version 5.1 in a next few weeks.
+						</div>
+						<h4>Working with sources</h4>
+						<p>The sources API will let you to load customized contents into the plugin externally. This includes skins, transitions, sample sliders, Google fonts, and any other material you might want to use to adjust the plugin according the needs of your work.</p>
+					</section>
+
+					<!-- Action hooks -->
+					<section>
+
+						<h4>Private actions</h4>
+						<p>Some additional action hooks are already used in the plugin internals, but these are not stable yet and can change at any time. They will be added to the list above when they are ready.</p>
+
+						<h4>Public action reference</h4>
+						<p><p>Read the <a href="http://codex.wordpress.org/Function_Reference/add_action" target="_blank">WP Codex entry</a> for more information about using actions.</p></p>
+						<ul class="sep">
+							<li>
+								<code>layerslider_installed</code>
+								<p>Runs only on the first installation, even if the plugin was removed previously.</p>
+							</li>
+							<li>
+								<code>layerslider_activated</code>
+								<p>Runs when the plugin has been activated.</p>
+							</li>
+							<li>
+								<code>layerslider_updated</code>
+								<p>Runs when the plugin was updated and a new version is recognized. This method also works when a user overrides the plugin folder on FTP.</p>
+							</li>
+							<li>
+								<code>layerslider_deactivated</code>
+								<p>Runs when the plugin has beed deactivated.</p>
+							</li>
+							<li>
+								<code>layerslider_uninstalled</code>
+								<p>Runs when the plugin has beed uninstalled.</p>
+							</li>
+							<li>
+								<code>layerslider_ready</code>
+								<p>Runs when the plugin has loaded and it is ready to process custom code. This hook fires on every page refresh, and it might slow down pages.</p>
+							</li>
+							<li>
+								<code>layerslider_before_slider_content</code>
+								<p>Runs before printing slider content. This action can be used to print custom HTML before the slider containment element.</p>
+							</li>
+							<li>
+								<code>layerslider_after_slider_content</code>
+								<p>Runs after printing slider content. This action can be used to print custom HTML after the slider containment element.</p>
+							</li>
+						</ul>
+					</section>
+
+					<!-- Filter hooks -->
+					<section>
+
+						<div class="km-notification warning cf">
+							<span class="icon-attention"></span>
+							The structure of the defaults object is not yet final. Consider potential risks before using it.
+						</div>
+						<div class="km-notification info cf">
+							<span class="icon-info-circled"></span>
+							Although the filter API is stable, the slider data to be processed may change over time.
+						</div>
+
+						<h4>Private filters</h4>
+						<p>Some additional filters are already used in the plugin internals, but these are not stable yet and can change at any time. They will be added to the list above when they are ready.</p>
+
+						<h4>Public filter reference</h4>
+						<p>Read the <a href="http://codex.wordpress.org/Function_Reference/add_filter" target="_blank">WP Codex entry</a> for more information about using filters.</p>
+						<ul class="sep">
+							<li>
+								<i>(array)</i> <code>layerslider_pre_parse_defaults( array $slider )</code>
+								<p>Runs before parsing defaults. It contains the raw slider data, which includes legacy property names, and it should not be used.</p>
+							</li>
+							<li>
+								<i>(array)</i> <code>layerslider_override_defaults( array $defaults )</code>
+								<p>Provides an easy way to change the default slider settings. It applies on the admin interface, but it will take effect in generating the slider markup as well. This filter won't override previously created sliders.</p>
+							</li>
+							<li>
+								<i>(array)</i> <code>layerslider_post_parse_defaults( array $slider )</code>
+								<p>Runs after the slider data was parsed based on the defaults, and the plugin is ready to override settings without any later influences. Use this filter wisely, it can break previously created sliders since it is the final step before printing the markup.</p>
+							</li>
+						</ul>
+
+						<h4>Filter examples</h4>
+						<p>The following example uses the <code>layerslider_override_defaults</code> filter to change some default settings related with appearance.</p>
+						<pre name="code" class="brush: php;">&lt;?php
+
+add_filter('layerslider_override_defaults', 'my_override');
+function my_override($defaults) {
+
+	// Uncomment these to see all settings
+	// echo '&lt;pre&gt;';
+	// var_dump($defaults);
+	// echo '&lt;/pre&gt;';
+
+	// Override some defaults
+	$defaults['slider']['fullWidth'] = true;
+	$defaults['slider']['skin'] = 'myskin';
+
+	return $defaults;
+}
+
+?&gt;</pre>
+					</section>
+
+					<!-- Release log -->
+					<section>
+						<h4>Release log for developers</h4>
+						<p>This section contains only changes, which could affect developers and their custom solutions built on top of the plugin.</p>
+						<div class="km-notification info cf">
+							<span class="icon-info-circled"></span>
+							Make sure to read the documentation for End-Users as well.
+						</div>
+						<h4>Major changes till 5.0.0</h4>
+						<ul>
+							<li>Using the Options API for storing sliders is deprecated since v3.6.0, and backwards compatibility will be dropped in the near future.</li>
+						</ul>
+
+						<h4>Version 5.0.0 or newer</h4>
+						<ul>
+							<li>Read through all the new docs (including the one for End-Users). Version 5.0.0 has major changes under the hood.</li>
+							<li>Old  slide &amp; layer transitions are deprecated. They will still work on front-end pages, but might be dropped completely in future versions. You should take this under consideration when changing the defaults.</li>
+							<li>Some of the new APIs are still experimental and will likely change. Use them for your own risk.</li>
+						</ul>
+					</section>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<footer>
+			<p>
+				Copyright &copy; 2011-2014 <a target="_blank" href="http://kreaturamedia.com">Kreatura Media</a>, All Rights Reserved!
+			</p>
+		</footer>
+	</div>
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/syntaxhighlighter/scripts/shCore.js" type="text/javascript"></script>
+	<script src="assets/js/syntaxhighlighter/scripts/shBrushJScript.js" type="text/javascript"></script>
+	<script src="assets/js/syntaxhighlighter/scripts/shBrushXml.js" type="text/javascript"></script>
+	<script src="assets/js/syntaxhighlighter/scripts/shBrushCss.js" type="text/javascript"></script>
+	<script src="assets/js/syntaxhighlighter/scripts/shBrushPhp.js" type="text/javascript"></script>
+	<script src="assets/js/doc.js"></script>
+</body>
+</html>

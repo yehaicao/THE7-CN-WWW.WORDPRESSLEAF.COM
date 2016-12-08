@@ -1,0 +1,70 @@
+/*
+Theme Name:     User Guide
+Theme URI:      http://dream-theme.com
+Description:    Child theme for the Twenty Twelve theme
+Author:         Miroslav Varsky
+Author URI:     http://dream-theme.com
+Template:       twentytwelve                             
+Version:        0.1.0
+*/
+
+@import url("../twentytwelve/style.css");
+
+.entry-content .table-of-content ul {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	list-style: circle;
+}
+
+.widget_user_guide li {
+	list-style: none;
+}
+.widget_user_guide li.has-children {
+	padding-left: 7px;
+}
+.widget_user_guide .ug-opener {
+	position: relative;
+	float: left;
+	top: 7px;
+	left: -4px;
+	width: 0;
+	height: 0;
+	border: solid 5px transparent;
+	border-left-color: #757575;
+	content: "";
+	cursor: pointer;
+}
+.widget_user_guide .act .ug-opener {
+	top: 10px;
+	left: -7px;
+	border-left-color: transparent;
+	border-top-color: #757575;
+}
+
+.widget_user_guide .ug-opener:hover {
+	border-left-color: #21759b;
+}
+.widget_user_guide .act .ug-opener:hover {
+	border-left-color: transparent;
+	border-top-color: #21759b;
+}
+.widget_user_guide .is-current > a {
+	font-weight: bold;
+}
+
+	.widget_user_guide li ul.children {
+		display: none;
+		margin: 0.5rem 0 1.5rem 2rem;
+	}
+	.widget_user_guide li.act ul.children {
+		display: block;
+	}
+
+.widget_user_guide .children li {
+	font-size: 90%;
+}
+
+.improve-manual {
+	font-size: 80%;
+	line-height: 150%;
+}

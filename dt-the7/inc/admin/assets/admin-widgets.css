@@ -1,0 +1,46 @@
+.dt-widget-sortable li.ui-state-default {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #DFDFDF;
+	-webkit-box-shadow: inset 0 1px 0 #FFF;
+	box-shadow: inset 0 1px 0 #FFF;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+	background: #F1F1F1;
+	background-image: -webkit-gradient(linear,left bottom,left top,from(#ECECEC),to(#F9F9F9));
+	background-image: -webkit-linear-gradient(bottom,#ECECEC,#F9F9F9);
+	background-image: -moz-linear-gradient(bottom,#ECECEC,#F9F9F9);
+	background-image: -o-linear-gradient(bottom,#ECECEC,#F9F9F9);
+	background-image: linear-gradient(to top,#ECECEC,#F9F9F9);
+	padding: 3px 4px 3px 3px;
+}
+
+.dt-widget-sortable .dt-widget-sortable-remove {
+	float: right;
+	width: 25px;
+	height: 25px;
+	background: url(images/close-icon-25x25.jpg) no-repeat 0 0;
+}
+
+.dt-widget-sortable .dt-widget-sortable-placegolder {
+	width: 223px;
+	height: 135px;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	margin-bottom: 6px;
+}
+
+.dt-widget-sortable.dt-widget-progress-bar .dt-widget-sortable-placegolder {
+	width: 266px;
+	height: 89px;
+}
+
+.dt-widget-sortable .wp-picker-container {
+	margin: 1px;
+}
+
+.dt-widget-sortable .widefat {
+	height: 100px;
+}
