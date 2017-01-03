@@ -217,7 +217,7 @@ $option_files = array(
 	'widget_areas' => $dir . 'options-widgetareas.php',
 	'import_export' => $dir . 'options-importexport.php',
 	'theme_update' => $dir . 'options-themeupdate.php',
-	'theme_update' => $dir . 'options-chinese.php'
+	'theme_chinese' => $dir . 'options-chinese.php'
 );
 
 $option_files = apply_filters( 'presscore_options_list', $option_files );
